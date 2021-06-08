@@ -5,7 +5,7 @@ import CarouselContainer from "./components/CarouselContainer";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import { Home } from "./components/Home";
 import { AboutUs } from "./components/AboutUs";
-import { Project } from "./components/Register";
+import { Register } from "./components/Register";
 import { Login } from "./components/Login";
 import { AppNavBar } from "./Common/AppNavBar";
 import {
@@ -31,8 +31,8 @@ function App() {
           <AboutUs />
         </Route>
 
-        <Route path="/project">
-          <Project />
+        <Route path="/register">
+          <Register />
         </Route>
 
         <Route path="/login">
