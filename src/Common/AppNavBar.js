@@ -25,8 +25,8 @@ export function AppNavBar() {
             Home
           </Nav.Link>
 
-          <Nav.Link as={Link} to="/project" className="h5">
-            Project
+          <Nav.Link as={Link} to="/register" className="h5">
+            <Register></Register>
           </Nav.Link>
           <Nav.Link as={Link} to="/about-us" className="h5">
             About Us
