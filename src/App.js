@@ -8,6 +8,12 @@ import { AboutUs } from "./components/AboutUs";
 import { Register } from "./components/Register";
 import { Login } from "./components/Login";
 import { AppNavBar } from "./Common/AppNavBar";
+import { UserLogin } from "./components/UserLogin";
+import { Registration } from "./components/Registration";
+
+import { EmployeeUpsert } from "./components/EmployeeUpsert";
+import { EmployeeList } from "./components/EmployeeList";
+
 import {
   Button,
   Form,
@@ -25,6 +31,13 @@ function App() {
       <Switch>
         <Route path="/home">
           <Home />
+          <div>
+            {/* <h1 className="bg-dark text-light p-2 sticky-top d-flex justify-content-center ">
+        Welcome to Financial Rating
+      </h1> */}
+
+            <CarouselContainer />
+          </div>
         </Route>
 
         <Route path="/about-us">
@@ -32,25 +45,24 @@ function App() {
         </Route>
 
         <Route path="/register">
-          <Register />
+          <Registration />
         </Route>
 
         <Route path="/login">
-          <Login />
+          <UserLogin />
+        </Route>
+
+        <Route path="/employeeupsert">
+          <EmployeeUpsert />
+        </Route>
+        <Route path="/employeelist">
+          <EmployeeList />
         </Route>
 
         <Route path="/">
           <Home />
         </Route>
       </Switch>
-
-      <div>
-        {/* <h1 className="bg-dark text-light p-2 sticky-top d-flex justify-content-center ">
-        Welcome to Financial Rating
-      </h1> */}
-
-        <CarouselContainer />
-      </div>
     </Router>
   );
 }
