@@ -33,7 +33,7 @@ export function OrgUpsert() {
   const updateOrgHeadquarters = (e) => setOrgHeadquarters(e.target.value);
   const updateOrgRevenue = (e) => setOrgRevenue(e.target.value);
   const updateOrgEmployees = (e) => setOrgEmployees(e.target.value);
-  const updateOrgVideokyc = (e) => setVideokyc(e.target.value);
+  const updateOrgVideokyc = (item) => setVideokyc(item);
   const updateCreditCard = (item) => setCreditCard(item);
 
   const [successOperation, setSuccessOperation] = useState(false);
@@ -175,7 +175,7 @@ export function OrgUpsert() {
               className="m-2"
               // placeholder=""
               value={orgVideokyc}
-              onChange={(e) => updateOrgVideokyc(e)}
+              onChange={() => updateOrgVideokyc("true")}
             />
           </div>
 
