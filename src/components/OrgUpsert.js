@@ -131,7 +131,7 @@ export function OrgUpsert() {
                 placeholder="Enter Name"
                 value={orgName}
                 onChange={(e) => updateOrgName(e)}
-                minLength="4"
+                minLength="3"
                 maxLength="10"
                 required
               />
