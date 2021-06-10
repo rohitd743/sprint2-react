@@ -112,7 +112,7 @@ export function OrgUpsert() {
       <div className="row">
         <div className="col-3 col-md-3 d-none d-md-block"></div>
         <div className="col-12 col-md-6">
-          <h3 className="alert alert-secondary">
+          <h3 className="alert alert-secondary d-flex justify-content-center mt-2">
             {state.organization.reforg.orgID
               ? "Update Organization"
               : "Organization Register"}

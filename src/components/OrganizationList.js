@@ -37,7 +37,9 @@ export function OrganizationList() {
       <div className="row">
         <div className="col-3 col-md-2 d-none d-md-block"></div>
         <div className="col-12 col-md-8">
-          <h3 className="alert alert-secondary">Organization List</h3>
+          <h3 className="alert alert-secondary d-flex justify-content-center mt-2">
+            Organization List
+          </h3>
 
           {successOperation && (
             <div className="alert alert-success">Opeation Success</div>
