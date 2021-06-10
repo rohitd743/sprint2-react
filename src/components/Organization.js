@@ -1,7 +1,29 @@
 import { Button } from "react-bootstrap";
-// import { UserNavBar } from "../Common/AppNavBar";
+import { useEffect, useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { useHistory } from "react-router";
+import {
+  getAllOrganizationAction,
+  updateRefOrganization,
+} from "../redux/OrgRegisterReducer";
+import { OrganizationModal } from "./OrganizationModal";
+import { HomeNavBar } from "../Common/AppNavBar";
 
-export const OrganizationRating = () => {
+export function Organization() {
+  const state = useSelector((state) => state);
+  const dispatch = useDispatch();
+  const history = useHistory();
+  // console.log(state);
+
+  console.log(state.organization.list);
+
+  const [successOperation, setSuccessOperation] = useState(false);
+
+  // Used to Initialize :: READ THE DATA FROM API
+  useEffect(() => {
+    dispatch(getAllOrganizationAction());
+  }, []);
+
   return (
     <div>
       {/* <UserNavBar /> */}
@@ -21,22 +43,19 @@ export const OrganizationRating = () => {
               </tr>
             </thead>
             <tbody>
-              {/* <tr>
-                {<th scope="row">{index + 1}</th> }
-                <th scope="row">1</th>
-                <td>45781</td>
-                <td>5</td>
-                <td>02-05-2021</td>
-                <td>08-05-2021</td>
-                <Button variant="outline-danger" className="w-5 mt-1">
-                  Cancel
-                </Button>
-              </tr> */}
+              {[...state.organization.list].map((item, index) => (
+                <tr key={index}>
+                  <th scope="row">{item.orgID}</th>
+                  <td>{item.orgName}</td>
+                  <td>{item.rating}</td>
+                </tr>
+              ))}
             </tbody>
           </table>
         </div>
         <div className="col-3 col-md-3 d-none d-md-block"></div>
       </div>
+      <OrganizationModal />
     </div>
   );
-};
+}

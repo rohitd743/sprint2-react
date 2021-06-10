@@ -10,7 +10,7 @@ import { UserLogin } from "./components/UserLogin";
 import { Registration } from "./components/Registration";
 
 import { OrgUpsert } from "./components/OrgUpsert";
-import { OrganizationRating } from "./components/Organization";
+import { Organization } from "./components/Organization";
 
 import {
   Button,
@@ -55,12 +55,12 @@ function App() {
           <UserLogin />
         </Route>
 
-        <Route path="/organizationrating">
-          <OrganizationRating />
-        </Route>
-
         <Route path="/organizationupsert">
           <OrgUpsert />
+        </Route>
+
+        <Route path="/organization">
+          <Organization />
         </Route>
 
         <Route path="/">
