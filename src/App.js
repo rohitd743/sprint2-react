@@ -5,17 +5,13 @@ import CarouselContainer from "./components/CarouselContainer";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import { Home } from "./components/Home";
 import { AboutUs } from "./components/AboutUs";
-import { Register } from "./components/Register";
-import { Login } from "./components/Login";
 import { AppNavBar } from "./Common/AppNavBar";
 import { UserLogin } from "./components/UserLogin";
 import { Registration } from "./components/Registration";
 
-import { EmployeeUpsert } from "./components/EmployeeUpsert";
-import { EmployeeList } from "./components/EmployeeList";
+import { OrgUpsert } from "./components/OrgUpsert";
 import { OrganizationRating } from "./components/Organization";
-import { Feedback } from "./components/Feedback";
-import { OrgRegistration } from "./components/OrgRegister";
+
 import {
   Button,
   Form,
@@ -24,6 +20,7 @@ import {
   Navbar,
   NavDropdown,
 } from "react-bootstrap";
+import { OrganizationList } from "./components/OrganizationList";
 
 function App() {
   return (
@@ -46,6 +43,10 @@ function App() {
           <AboutUs />
         </Route>
 
+        <Route path="/organizationlist">
+          <OrganizationList />
+        </Route>
+
         <Route path="/register">
           <Registration />
         </Route>
@@ -54,23 +55,12 @@ function App() {
           <UserLogin />
         </Route>
 
-        <Route path="/employeeupsert">
-          <EmployeeUpsert />
-        </Route>
-        <Route path="/employeelist">
-          <EmployeeList />
-        </Route>
-
         <Route path="/organizationrating">
           <OrganizationRating />
         </Route>
 
-        <Route path="/feedback">
-          <Feedback />
-        </Route>
-
-        <Route path="/orgregister">
-          <OrgRegistration />
+        <Route path="/organizationupsert">
+          <OrgUpsert />
         </Route>
 
         <Route path="/">

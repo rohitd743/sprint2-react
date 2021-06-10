@@ -8,6 +8,7 @@ const initState = {
 // ACTION TYPES
 const ORG_REGISTER = "ORG_REGISTER";
 const ORG_UPDATE = "ORG_UPDATE";
+const ORG_GET_ALL = "ORG_GET_ALL";
 
 const REF_ORG = "REF_ORG";
 
@@ -30,11 +31,11 @@ export function OrgRegisterAction(payload) {
   };
 }
 
-export function updateEmployeeAction(payload) {
+export function updateOrgAction(payload) {
   // return { type: EMPLOYEE_UPDATE, payload: payload };
   return async (dispatch) => {
     // WE HV TO CALL THE SPRINT1 / SPRING BOOT
-    const url = `http://localhost:8080/api/employee/${payload.id}`;
+    const url = `http://localhost:8080/api/organisation/update/${payload.orgID}`;
     const requestBody = { ...payload };
 
     await fetch(url, {
@@ -45,6 +46,20 @@ export function updateEmployeeAction(payload) {
 
     // update the ui.
     dispatch(updateRefOrganization({}));
+  };
+}
+
+export function getAllOrganizationAction(payload) {
+  return async (dispatch) => {
+    // WE HV TO CALL THE SPRINT1 / SPRING BOOT
+    const url = "http://localhost:8080/api/organisation/";
+
+    // HTTP Client / POSTMAN / SWAGGER
+    const response = await fetch(url);
+    const organizationList = await response.json();
+
+    // Update the UI
+    dispatch({ type: ORG_GET_ALL, payload: organizationList });
   };
 }
 
@@ -59,7 +74,11 @@ export function OrgRegisterReducer(state = initState, action) {
       return { ...state, list: [action.payload, ...state.list] };
     case ORG_UPDATE:
       // TODO
-      return state;
+      return { ...state, list: action.payload };
+
+    case ORG_GET_ALL:
+      // TODO
+      return { ...state, list: action.payload };
 
     case REF_ORG:
       return { ...state, reforg: action.payload };
