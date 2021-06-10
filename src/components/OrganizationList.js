@@ -6,6 +6,7 @@ import {
   updateRefOrganization,
 } from "../redux/OrgRegisterReducer";
 import { OrganizationModal } from "./OrganizationModal";
+import { HomeNavBar } from "../Common/AppNavBar";
 
 export function OrganizationList() {
   const state = useSelector((state) => state);
@@ -31,7 +32,8 @@ export function OrganizationList() {
   };
 
   return (
-    <>
+    <div>
+      <HomeNavBar></HomeNavBar>
       <div className="row">
         <div className="col-3 col-md-2 d-none d-md-block"></div>
         <div className="col-12 col-md-8">
@@ -71,6 +73,6 @@ export function OrganizationList() {
 
       {/** EMPLOYEE MODAL */}
       <OrganizationModal />
-    </>
+    </div>
   );
 }

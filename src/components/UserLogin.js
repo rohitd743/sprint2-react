@@ -2,8 +2,9 @@ import { useState } from "react";
 import { Button } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
 import { useHistory } from "react-router-dom";
-import { AppNavBar } from "../Common/AppNavBar";
 import { UserLoginAction } from "../redux/UserLoginReducer";
+import { UserLoginNavBar } from "../Common/AppNavBar";
+
 export const UserLogin = () => {
   const dispatch = useDispatch();
   const history = useHistory();
@@ -41,7 +42,7 @@ export const UserLogin = () => {
 
   return (
     <div className="bg-info" style={{ height: "100vh" }}>
-      {/* <AppNavBar /> */}
+      <UserLoginNavBar></UserLoginNavBar>
       <div className="row">
         <div className="col-3 col-md-3 d-none d-md-block"></div>
         <div className="col-12 col-md-6">

@@ -5,7 +5,7 @@ import { useDispatch } from "react-redux";
 import { useSelector } from "react-redux";
 import { UserRegisterAction } from "../redux/UserRegisterReducer";
 import { useRef, useState } from "react";
-
+import { UserRegNavBar } from "../Common/AppNavBar";
 export function Registration() {
   const state = useSelector((state) => state);
   const dispatch = useDispatch();
@@ -57,7 +57,7 @@ export function Registration() {
 
   return (
     <div className="bg-info" style={{ height: "100vh" }}>
-      {/* <AppNavBar /> */}
+      <UserRegNavBar></UserRegNavBar>
 
       <div className="row ">
         <div className="col-3 col-md-3 d-none d-md-block"></div>
