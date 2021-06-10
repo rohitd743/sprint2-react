@@ -175,7 +175,7 @@ export function OrgUpsert() {
               className="m-2"
               // placeholder=""
               value={orgVideokyc}
-              onChange={() => updateOrgVideokyc("true")}
+              onClick={() => updateOrgVideokyc("true")}
             />
           </div>
 
