@@ -1,8 +1,16 @@
+import FacebookIcon from "@material-ui/icons/Facebook";
+import MailIcon from "@material-ui/icons/Mail";
+import CallIcon from "@material-ui/icons/Call";
+import TwitterIcon from "@material-ui/icons/Twitter";
+import WhatsAppIcon from "@material-ui/icons/WhatsApp";
+import InfoIcon from "@material-ui/icons/Info";
+import LinkedInIcon from "@material-ui/icons/LinkedIn";
+
 export function AboutUs() {
   return (
-    <div className="bg-info" style={{ height: "100vh" }}>
+    <div className="bg-light" style={{ height: "100vh" }}>
       <h1 className="text-dark" style={{ fontFamily: "cursive" }}>
-        About Us
+        <InfoIcon></InfoIcon> About Us
       </h1>
       <p className="m-3" style={{ textAlign: "justify" }}>
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero ut illo
@@ -29,11 +37,33 @@ export function AboutUs() {
         nemo numquam veritatis! Aut, nihil tenetur.
       </p>
 
-      <h2>Contact us</h2>
-      <p>
+      <div className="m-2">
         {" "}
-        <strong>Email:</strong> financialrating@outlook.com
-      </p>
+        <h2>Contact us</h2>
+        <div>
+          <MailIcon></MailIcon>
+          <strong>Email:</strong> financialrating@outlook.com
+        </div>
+        <div>
+          <CallIcon></CallIcon>
+          <strong>Contact:</strong> +91 84444499663
+        </div>
+        <div>
+          <WhatsAppIcon></WhatsAppIcon>
+          <strong>WhatsApp</strong> +91 8444441236
+        </div>
+        <div>
+          <a href="https://www.facebook.com/" target="_blank" className="">
+            <FacebookIcon></FacebookIcon>
+          </a>
+          <a href="https://www.twitter.com/" target="_blank" className="">
+            <TwitterIcon></TwitterIcon>
+          </a>
+          <a href="https://www.linkedin.com/" target="_blank" className="">
+            <LinkedInIcon></LinkedInIcon>
+          </a>
+        </div>
+      </div>
     </div>
   );
 }
