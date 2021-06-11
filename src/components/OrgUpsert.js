@@ -52,11 +52,10 @@ export function OrgUpsert() {
     } else {
       // you can write custom valiadation logic here.
       // username :: Speical Character validation
-      const re = /[A-z]/;
-      if (!re.test(orgName)) {
-        alert("Organisation name Vlidation Fails");
-        return;
-      }
+      // const re = /[A-z]/;
+      // if (!re.test(orgName)) {
+      //   alert("Organisation name Vlidation Fails");
+      //   return;
 
       // THIS IS REDUX ACTION CALLING
       dispatch(
@@ -133,6 +132,7 @@ export function OrgUpsert() {
                 onChange={(e) => updateOrgName(e)}
                 minLength="3"
                 maxLength="10"
+                pattern="^[A-Z].*"
                 required
               />
             </div>

@@ -7,7 +7,7 @@ import {
   updateRefOrganization,
 } from "../redux/OrgRegisterReducer";
 import { OrganizationModal } from "./OrganizationModal";
-import { HomeNavBar } from "../Common/AppNavBar";
+import { UserLoginNavBar } from "../Common/AppNavBar";
 
 export function Organization() {
   const state = useSelector((state) => state);
@@ -26,7 +26,7 @@ export function Organization() {
 
   return (
     <div>
-      {/* <UserNavBar /> */}
+      <UserLoginNavBar></UserLoginNavBar>
       <div className="row">
         <div className=" col-3 col-md-3 d-none d-md-block"></div>
         <div className="col-12 col-md-6 ">
